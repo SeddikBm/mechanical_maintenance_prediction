@@ -11,6 +11,8 @@ import os
 app = FastAPI(title="Prédiction Arrêts Engins")
 
 templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Charger les modèles et artéfacts au démarrage
 model = None
